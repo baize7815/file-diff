@@ -1,46 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
-    <script>self["MonacoEnvironment"] = (function (paths) {
-          return {
-            globalAPI: false,
-            getWorkerUrl : function (moduleId, label) {
-              var result =  paths[label];
-              if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
-                var currentUrl = String(window.location);
-                var currentOrigin = currentUrl.substr(0, currentUrl.length - window.location.hash.length - window.location.search.length - window.location.pathname.length);
-                if (result.substring(0, currentOrigin.length) !== currentOrigin) {
-                  var js = '/*' + label + '*/importScripts("' + result + '");';
-                  var blob = new Blob([js], { type: 'application/javascript' });
-                  return URL.createObjectURL(blob);
-                }
-              }
-              return result;
-            }
-          };
-        })({
-  "editorWorkerService": "/monacoeditorwork/editor.worker.bundle.js",
-  "css": "/monacoeditorwork/css.worker.bundle.js",
-  "html": "/monacoeditorwork/html.worker.bundle.js",
-  "json": "/monacoeditorwork/json.worker.bundle.js",
-  "typescript": "/monacoeditorwork/ts.worker.bundle.js",
-  "javascript": "/monacoeditorwork/ts.worker.bundle.js",
-  "less": "/monacoeditorwork/css.worker.bundle.js",
-  "scss": "/monacoeditorwork/css.worker.bundle.js",
-  "handlebars": "/monacoeditorwork/html.worker.bundle.js",
-  "razor": "/monacoeditorwork/html.worker.bundle.js"
-});</script>
-
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="智能,比对,交叉比对,PDF、Word、扫描件,合同比对,版本比对,前后比对,文档比对,文档差异,差异比对,文档智能比对,纸质文档比对,超长文档,可视化呈现" data-gatsby-head="true">
-    <meta name="description" content="文档内容对比神器，基于高精度文档结构解析，无论是Word、PDF还是图片，单栏、双栏还是艺术排版，文本段落还是表格，都提供准确的差异对比及展示" data-gatsby-head="true">
     <title>文档内容对比神器</title>
-    <script type="module" crossorigin src="/assets/index-DmkH2eWn.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DXc0fAPJ.css">
   </head>
   <body>
     <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
