@@ -1,18 +1,12 @@
 <template>
-  <div
-    class="w-100% h-100% overflow-hidden flex flex-col bg-[url('@/assets/images/bg.png')] bg-cover bg-center"
-  >
-    <div
-      class="h-80px px-20px flex-none flex items-center border-b-1 border-[rgba(0,0,0,0.06)] border-b-solid"
-    >
-      <div class="logo-section">
-        <img class="h-25px" src="@/assets/images/logo.svg" alt="AI小助手" />
+  <div class="w-full h-full overflow-hidden flex flex-col bg-gray-50">
+    <div class="h-20 px-8 flex-none flex items-center border-b border-gray-200 bg-white">
+      <div class="flex items-center gap-8 text-lg">
+        <span class="font-semibold text-xl">文档对比</span>
+        <router-link to="/home" class="hover:text-blue-600">文档对比</router-link>
+        <router-link to="/home/demo" class="hover:text-blue-600">demo示例</router-link>
       </div>
-      <div class="ml-80px flex items-center gap-80px text-18px">
-        <router-link to="/home">文档对比</router-link>
-        <router-link to="/home/demo">demo示例</router-link>
-      </div>
-      <div class="flex items-center gap-10px text-20px ml-auto">
+      <div class="flex items-center gap-3 text-xl ml-auto">
         <el-icon class="cursor-pointer" title="个人中心">
           <UserFilled />
         </el-icon>
